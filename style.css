@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(48, 47, 47);
+  overflow: hidden;
+}
+
+#canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.imageBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+h1 {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%);
+  font-family: 'Hind Siliguri', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 3em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(10deg, rgba(220, 228, 228, 0.255), rgba(255, 255, 255), rgb(245, 245, 242));
+  background-repeat: no-repeat;
+  background-size: 90%;
+  animation: animate 5s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -1000%;
+  }
+
+  100% {
+    background-position: 1000%;
+  }
+}
+
+@media (max-width: 1030px) {
+  #canvas {
+    width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .imageBox img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+

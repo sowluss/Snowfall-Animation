@@ -1,83 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="winter-lg.jpeg">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Snowfall animation</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: rgb(48, 47, 47);
-    }
-
-    #canvas {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  </style>
-
+  <meta property="og:image" content="fully_qualified_image_url_here" />
+  <title>Snowfall</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
   <canvas id="canvas" width="1920" height="1338"></canvas>
 
-
-  <script type="text/javascript">
   
-  function init() {
-    let canvas = document.getElementById('canvas');
-    let context = canvas.getContext('2d');
-    let w = canvas.width;
-    let h = canvas.height;
+  <div class="imageBox">
+      <img src="logo.png" alt="">
+    </div>
 
-    let bkg = new Image();
-    bkg.src = 'winter-lg.jpeg'; 
 
-    let flakes = [];
+  <a href="http://www.sowlusimkus.com" target="_blank">
+    <h1>www.sowlusimkus.com</h1>
+  </a>
 
-    function snowFall() {
-      context.clearRect(0, 0, w, h);
-      context.drawImage(bkg, 0, 0);
-      addFlake();
-      snow();
-    };
+  <audio autoplay>
+    <source src="winter-ambient.ogg" type="audio/ogg">
+    <source src="winter-ambient.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-    function addFlake() {
-      let x = Math.ceil(Math.random() * w);
-      var s = Math.ceil(Math.random() * 4);
-      flakes.push({'x': x, 'y': 0, 's': s});
-    };
-
-    function snow() {
-      for(var i = 0; i < flakes.length; i++) {
-        let flake = flakes[i];
-        context.beginPath();
-        context.fillStyle = "rgba(255, 255, 255, 0.7)";
-        context.arc(flake.x, flakes[i].y+=flake.s/2, flake.s/2, 0, 2 * Math.PI);
-        context.fill();
-        if(flakes[i].y > h) {
-          flakes.splice(i, 1);
-        }
-      };
-    };
-
-    setInterval(snowFall, 20);
-  };
-
-  window.onload = init;
-  
-  
-  </script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
